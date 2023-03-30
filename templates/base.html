@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block css %}{% endblock %}
+    <link rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                        crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-xxl navbar-light" role="navigation" style="background-color: #60DEFD;">
+      <div class="container">
+          <img src="{{ url_for('static', filename='img/icon.png') }}" class="img-thumbnail" width="40px" height="40px" style="margin-right: 50px;">
+          <a href="http://127.0.0.1:5000/" class="navbar-brand" style="font-size: 30px;"><b>Travel Like</b></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                  aria-controls="navbarContent" aria-expanded="false">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarContent" style="margin-left: 35%;">
+              <ul class="navbar-nav mr-auto mb-2">
+                  <li class="nav-item">
+                      <a href="" class="nav-link" style="font-size: 25px;"><u>Новости</u></a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="" class="nav-link" style="margin-left: 30%;width: 100px;font-size: 25px;"><u>Лайфхаки</u></a>
+                  </li>
+              </ul>
+              <form action="" class="d-flex" style="margin-left: 15%;">
+                  <a href="http://127.0.0.1:8080/login" class="btn btn-primary btn-lg" role="button"
+                     aria-pressed="true" style="width: 100px;">Войти</a>
+                  <a href="http://127.0.0.1:8080/register" class="btn btn-primary btn-lg" role="button"
+                     aria-pressed="true" style="width: 250px;margin-left: 5%;">Зарегистрироваться</a>
+              </form>
+          </div>
+      </div>
+    </nav>
+    {% block body %}{% endblock %}
+</body>
+</html>
