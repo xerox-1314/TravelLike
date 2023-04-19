@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/news.css') }}">
+{% endblock %}
+
+{% block title %}Travel Like - News{% endblock %}
+
+{% block body %}
+<div class="main-block">
+    <h2>Новости об интересных местах</h2>
+    {% for new in news_list %}
+        <div class="new-block">
+            <div class="border border-5 border-primary">
+                <div class="user-block">
+                    <img src="avatars/{{ new['user_image'] }}">
+                    <h4>{{ new['user_nickname'] }}</h4>
+                </div>
+                <h3>{{ new['title'] }}</h3>
+                <h5>{{ new['content'] }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

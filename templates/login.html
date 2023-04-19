@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block title %}Travel Like - login{% endblock %}
+
+{% block body %}
+<div class="main-block">
+    <h1 class="top-text">Вход</h1>
+    <h4>{{ error }}</h4>
+    <div>
+        <form class="login_form" method="post">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите адрес почты" name="email">
+            <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
+            <div class="login-button">
+                <button type="submit" class="btn btn-primary">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

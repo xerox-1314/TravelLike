@@ -1,0 +1,25 @@
+form.login_form {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    max-width: 500px;
+    background-color: #ebed5a;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+}
+
+.top-text {
+    text-align: center;
+    margin-top: 7%;
+}
+
+h4 {
+    color: red;
+    text-align: center;
+}
