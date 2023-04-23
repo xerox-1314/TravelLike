@@ -1,0 +1,27 @@
+form.login_form {
+    max-width: 100%;
+    background-color: white;
+    border: 0px solid gray;
+    padding: 30px;
+    text-size: 25px;
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.top-text {
+    text-align: center;
+    margin-top: 7%;
+}
+
+h4 {
+    color: red;
+    text-align: center;
+}
+
+.form-group {
+    margin-top: 1%;
+}

@@ -1,20 +1,7 @@
 .main-block {
     margin-top: 8%;
-}
-
-.new-block {
-    margin-top: 3%;
-    margin-left: 7%;
-    width: 86%;
-}
-
-.nav {
-    float: left;
-    margin-left: 200px;
-}
-
-.title {
-    margin-left: 20%;
+    margin-left: 5%;
+    max-width: 90%;
 }
 
 .user-block {
@@ -26,4 +13,12 @@
 .news-content {
     margin-left: 1%;
     margin-down: 1%;
+}
+
+.likes-dislikes {
+    float: left;
+    margin-top: 3%;
+    margin-left: 1%;
+    max-width: 5%;
+    max-height: 5%;
 }

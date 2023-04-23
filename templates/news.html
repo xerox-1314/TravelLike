@@ -8,18 +8,38 @@
 
 {% block body %}
 <div class="main-block">
-    <h2>Новости об интересных местах</h2>
+    <div class="title">
+        <div class="nav">
+            <h2>Новости об интересных местах</h2>
+        </div>
+        {% if data['login'] == True %}
+            <div class="nav">
+                <a class="btn btn-warning" href="/create_news" role="button" style="width: 250px;height: 45px;font-size: 20px;">Выложить новость</a>
+            </div>
+        {% endif %}
+    </div>
+    <div style="clear: both;"></div>
+    <div class="news-block">
     {% for new in news_list %}
         <div class="new-block">
             <div class="border border-5 border-primary">
                 <div class="user-block">
-                    <img src="avatars/{{ new['user_image'] }}">
+                    <img src="{{ new['user_image'] }}" style="width: 40px;height: 40px;" class="rounded-circle">
+                </div>
+                <div class="user-block">
                     <h4>{{ new['user_nickname'] }}</h4>
                 </div>
-                <h3>{{ new['title'] }}</h3>
-                <h5>{{ new['content'] }}</h5>
+                <div class="user-block">
+                    <p style="position: absolute;right: 8%;">{{ new['created_date'] }}</p>
+                </div>
+                <div style="clear: both;"></div>
+                <div class="news-content">
+                    <a href="/full_news/{{ new.id }}" class="nav-link" style="font-size: 25px;color: black;"><u>{{ new['title'] }}</u></a>
+                    <h5>{{ new['content'] }}</h5>
+                </div>
             </div>
         </div>
     {% endfor %}
+    </div>
 </div>
 {% endblock %}

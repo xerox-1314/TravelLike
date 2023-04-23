@@ -25,21 +25,21 @@
           <div class="collapse navbar-collapse" id="navbarContent" style="margin-left: 35%;">
               <ul class="navbar-nav mr-auto mb-2">
                   <li class="nav-item">
-                      <a href="http://127.0.0.1:5000/news" class="nav-link" style="font-size: 25px;"><u>Новости</u></a>
+                      <a href="/news" class="nav-link" style="font-size: 25px;"><u>Новости</u></a>
                   </li>
                   <li class="nav-item">
-                      <a href="" class="nav-link" style="margin-left: 30%;width: 100px;font-size: 25px;"><u>Лайфхаки</u></a>
+                      <a href="/lifehacks" class="nav-link" style="margin-left: 30%;width: 100px;font-size: 25px;"><u>Лайфхаки</u></a>
                   </li>
               </ul>
               <form action="" class="d-flex" style="margin-left: 15%;">
                   {% if data['login'] == False %}
-                      <a href="http://127.0.0.1:5000/login" class="btn btn-primary btn-lg" role="button"
+                      <a href="/login" class="btn btn-primary btn-lg" role="button"
                          aria-pressed="true" style="width: 100px;">Войти</a>
-                      <a href="http://127.0.0.1:5000/register" class="btn btn-primary btn-lg" role="button"
+                      <a href="/register" class="btn btn-primary btn-lg" role="button"
                          aria-pressed="true" style="width: 250px;margin-left: 5%;">Зарегистрироваться</a>
                   {% else %}
-                      <a href="http://127.0.0.1:5000/profile" class="nav-link" style="font-size: 23px;margin-left: 3%;color:black;">{{ data['nickname'] }}</a>
-                      <img src="avatars/{{ data['image'] }}" width="60px" height="60px" style="margin-left: 7%;">
+                      <a href="/profile" class="nav-link" style="font-size: 23px;margin-left: 3%;color:black;">{{ data['nickname'] }}</a>
+                      <img src="{{ data['image'] }}" width="60px" height="60px" style="margin-left: 7%;" class="rounded-circle">
                   {% endif %}
               </form>
           </div>

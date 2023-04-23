@@ -1,0 +1,21 @@
+.main-block {
+    margin-top: 8%;
+}
+
+.profile-image {
+    height: 90%;
+    width: 100%;
+}
+
+.profile-info {
+    float: left;
+    margin-left: 3%;
+    margin-top: 3%;
+    width: 30%;
+}
+
+.level {
+    margin-top: 5%;
+    max-width: 90%;
+    margin-left: 3%;
+}

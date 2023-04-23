@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock %}
+
+{% block title %}Travel Like - News{% endblock %}
+
+{% block body %}
+<div class="main-block">
+    <h2 style="text-align: center;">Профиль</h2>
+    <div class="profile-info">
+        <img class="profile-image" src="{{ user_data['image'] }}">
+    </div>
+    <div class="profile-info" style="max-width: 15%;">
+        <h3>{{ user_data['nickname'] }}</h3>
+        <p class="font-italic">e-mail: {{ user_data['email'] }}</p>
+        <p>Обо мне: {{ user_data['about'] }}</p>
+        <a href="/change_profile" role="button" class="btn btn-warning">Изменить</a>
+        <a href="/logout" role="button" class="btn btn-danger">Выйти</a>
+    </div>
+    <div class="profile-info" style="max-width: 25%;margin-left: 12%;max-height: 25%;">
+        <div class="border border-3 border-warning" style="text-align: center;">
+            <h4>Активность</h4>
+            <p>Поставлено лайков: {{ user_data['likes'] }}</p>
+            <p>Поставлено дизлайков: {{ user_data['dislikes'] }}</p>
+            <p>Выложено постов: {{ user_data['num_posts'] }}</p>
+            <p>Выложено лайфхаков: {{ user_data['num_lifehucks'] }}</p>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="level">
+        <h2>Уровень путешественника</h2>
+        <div class="progress" style="height: 25px;">
+            <div class="progress-bar bg-success" role="progressbar" style="width: 44%" aria-valuenow="44" aria-valuemin="0" aria-valuemax="100">44%</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

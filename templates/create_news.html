@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_news.css') }}">
+{% endblock %}
+
+{% block title %}Travel Like - Create{% endblock %}
+
+{% block body %}
+<div class="main-block">
+    <h1 class="top-text">Создание новости</h1>
+    <p style="text-align: center;">Внимание! Все новости просматриваются модератором. В случае нарушения правил сайта пользователь, написавший новость, будет забанен на сайте!</p>
+    <h4>{{ error }}</h4>
+    <div>
+        <form class="login_form" method="post" enctype="multipart/form-data">
+            <input type="text" class="form-control" id="title" placeholder="Введите заголовок статьи" name="title">
+            <div class="form-group">
+                <label for="content">Напишите то, о чем хотите рассказать</label>
+                <textarea class="form-control" id="content" rows="10" name="content"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="photo">Приложите фотографию, если это нужно для вашей новости</label>
+                <input type="file" class="form-control-file" id="photo" name="file">
+            </div>
+            <div class="register-button">
+                <button type="submit" class="btn btn-primary">Выложить новость</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
