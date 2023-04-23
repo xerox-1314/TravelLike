@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+{% endblock %}
+
+{% block title %}Travel Like - registration{% endblock %}
+
+{% block body %}
+<div class="main-block">
+    <h1 class="top-text">Изменение данных пользователя</h1>
+    <h4>{{ error }}</h4>
+    <div>
+        <form class="login_form" method="post" enctype="multipart/form-data">
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Введите адрес почты" name="email" value="{{ user_info['email'] }}">
+            <input type="password" class="form-control" id="password" placeholder="Введите пароль" name="password">
+            <input type="text" class="form-control" id="nickname" placeholder="Введите никнейм на сайте" name="nickname" value="{{ user_info['nickname'] }}">
+            <div class="form-group">
+                <label for="about">Немного о себе</label>
+                <p><textarea class="form-control" id="about" rows="3" name="about">{{ user_info['about'] }}</textarea></p>
+            </div>
+            <div class="form-group">
+                <label for="photo">Выберите фото профиля</label>
+                <input type="file" class="form-control-file" id="photo" name="file">
+            </div>
+            <div class="form-group">
+                <label for="form-check">Укажите пол</label>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sex" id="male" value="male" checked>
+                  <label class="form-check-label" for="male">
+                    Мужской
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="sex" id="female" value="female">
+                  <label class="form-check-label" for="female">
+                    Женский
+                  </label>
+                </div>
+            </div>
+            <div class="register-button">
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
